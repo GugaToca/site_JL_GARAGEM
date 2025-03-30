@@ -100,6 +100,16 @@
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         }
 
+        video {
+        width: 400%;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 16/9;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        object-fit: cover;
+    }
+
         footer {
             background: #039eb9;
             color: white;
@@ -165,6 +175,16 @@
                             <img src="carro_antes.jpeg" alt="Antes">
                             <img src="carro_depois.jpeg" alt="Depois">
                         </div>
+
+                        <div class="box" id="galeria">
+                            <h2>Antes e Depois</h2>
+                            <div class="gallery">
+                                <video src="videocarro_antes.mp4" controls></video>
+                                <video src="videocarro_depois.mp4" controls></video>
+                            </div>
+                        </div>
+
+                        
 
 
         </section>
