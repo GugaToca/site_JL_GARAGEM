@@ -48,7 +48,7 @@
             margin: 0 15px;
         }
         nav ul li a {
-            color: rgb(12, 12, 12);
+            color: rgb(0, 0, 0);
             text-decoration: none;
             font-weight: bold;
         }
@@ -110,6 +110,83 @@
         object-fit: cover;
     }
 
+    .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.service-item {
+    flex: 1 1 250px; /* Mantém flexível, mas respeita o tamanho mínimo */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(5, 178, 221, 0.5);
+    text-align: center;
+    max-width: 300px;
+}
+
+.service-item h3 {
+    color: #02c1e2;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    color: #333;
+    font-size: 14px;
+}
+
+#nossos-servicos {
+    margin-bottom: 70px; /* Adiciona espaçamento abaixo da seção */
+}
+
+#contatos, #galeria {
+    padding-top: 50px; /* Garante um espaço extra antes das seções seguintes */
+}
+
+#depoimentos {
+    margin-top: 40px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(5, 178, 221, 0.5);
+    text-align: center;
+}
+
+.testimonials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    max-width: 300px;
+    padding: 15px;
+    border-left: 5px solid #02c1e2;
+    font-style: italic;
+}
+
+#cta {
+    text-align: center;
+    background: #03aac7;
+    color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+#cta .btn {
+    background: white;
+    color: #02c1e2;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+
+
         footer {
             background: #039eb9;
             color: white;
@@ -144,21 +221,29 @@
         
                 <div class="box" id="nossos-servicos">
                     <h2>Nossos Serviços</h2>
-                    <ul>
-                        <li><strong>Lavagem Completa</strong></li>
-                        <li><strong>Polimento e Cristalização</strong></li>
-                        <li><strong>Higienização Interna</strong></li>
-                        <li><strong>Proteção de Pintura</strong></li>
-                        <li><strong></strong></li>
-                        <li><strong></strong></li>
-                        <li><strong></strong></li>
-                    </ul>
-                </div>
+                    <div class="services-container">
+                        <div class="service-item">
+                            <h3>🚘 Lavagem Completa</h3>
+                            <p>Removemos toda a sujeira e protegemos a pintura do seu veículo.</p>
+                        </div>
+                        <div class="service-item">
+                            <h3>✨ Polimento e Cristalização</h3>
+                            <p>Realçamos o brilho e garantimos uma proteção duradoura.</p>
+                        </div>
+                        <div class="service-item">
+                            <h3>🛋️ Higienização Interna</h3>
+                            <p>Seu carro livre de ácaros e odores com um serviço detalhado.</p>
+                        </div>
+                        <div class="service-item">
+                            <h3>🛡️ Proteção de Pintura</h3>
+                            <p>Aumente a vida útil da pintura com nossa proteção especializada.</p>
+                        </div>
+                    </div>
         
                 <div class="box" id="contatos">
-                    <h2>Contatos</h2>
-                    <p>📍 Endereço: Rua Exemplo, 123 - Cidade</p>
-                    <p>📞 Telefone: (00) 1234-5678</p>
+                    <h2>Nosso Local:</h2>
+                    <p>📍 Endereço: Rua Exemplo, 123 - São José do Rio Preto</p>
+                    <p>📞 Telefone: (17) 1234-5678</p>
                     <p>📧 E-mail: contato@empresa.com</p>
                 </div>
 
@@ -177,9 +262,31 @@
                             </div>
                         </div>
 
+                        <div class="box" id="depoimentos">
+                            <h2>O que nossos clientes dizem</h2>
+                            <div class="testimonials">
+                                <div class="testimonial">
+                                    <p>🚘 "Meu carro ficou impecável! Serviço excelente e atendimento nota 10!"</p>
+                                    <span>— <strong>Ricardo Silva</strong></span>
+                                </div>
+                                <div class="testimonial">
+                                    <p>✨ "Nunca vi minha moto tão brilhante! Recomendo demais!"</p>
+                                    <span>— <strong>Alícia dos Santos</strong></span>
+                                </div>
+                                <div class="testimonial">
+                                    <p>✨ "Atendimento e serviço top de mais, recomendo muito"</p>
+                                    <span>— <strong>Pedro Henrique</strong></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box" id="cta">
+                            <h2>Pronto para transformar o seu companheiro de dia-dia?</h2>
+                            <p>Agende agora seu serviço e deixe seu veículo impecável!✨</p>
+                            <a href="https://wa.me/5517992636776" class="btn">AGENDAR AGORA</a>
+                        </div>
                         
-
-
+                        
         </section>
     </div>
     
