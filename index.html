@@ -27,6 +27,137 @@
             gap: 60px; /* Aumentando o espaçamento entre as seções */
         }
 
+
+        /* Estilos gerais */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Seção Hero */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Agora ocupa toda a altura da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Slider */
+.slider-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Ativa apenas a imagem atual */
+.slide.active {
+    opacity: 1;
+}
+
+/* Texto sobre as imagens */
+.hero-text {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escuro para melhorar a leitura */
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Botão CTA */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #ffcc00;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Botões de navegação */
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 3;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 🌍 Ajustes para dispositivos menores */
+@media (max-width: 768px) {
+    #hero {
+        height: 80vh; /* Ajusta a altura para telas menores */
+    }
+
+    .hero-text {
+        font-size: 16px; /* Reduz o tamanho da fonte */
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    button.prev, button.next {
+        font-size: 18px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero {
+        height: 70vh; /* Para telas muito pequenas */
+    }
+
+    .hero-text {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
         
         header {
     background: #02c1e2;
@@ -56,7 +187,107 @@
             background: url('fundo_garagemjl.jpg') no-repeat center center/cover;
             color: rgb(248, 248, 248);
             padding: 100px 20px;
+
+    
         }
+
+        #hero {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Ajuste conforme necessário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.slider-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100vw;
+    height: 60vh;
+    object-fit: cover;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escuro transparente */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ffcc00;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 3;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
         .btn {
             display: inline-block;
             background: #04bcdd;
@@ -289,10 +520,21 @@
     </header>
     
     <section id="hero">
-        <h2>Lavagem e Estética Automotiva de Qualidade</h2>
-        <p>Transformamos o visual do seu veículo com excelência.</p>
-        <a href="https://wa.me/5517992636776" target="_blank" class="btn">Agende Agora</a>
-    </section>
+        <div class="slider-container">
+            <div class="slider">
+                <img src="fundo_garagemjl1.jpg" class="slide active">
+                <img src="fundo_estetica2.jpg" class="slide">
+                <img src="" class="slide">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+    <h2>Lavagem e Estética Automotiva de Qualidade</h2>
+    <p>Transformamos o visual do seu veículo com excelência.</p>
+    <a href="https://wa.me/5517992636776" target="_blank" class="btn">Agende Agora</a>
+</section>
+
     
     <div class="container">
         <section class="grid">
