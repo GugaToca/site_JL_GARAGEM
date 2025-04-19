@@ -6,3 +6,10 @@ function moveSlide(step) {
     currentSlide = (currentSlide + step + slides.length) % slides.length;
     slides[currentSlide].classList.add('active');
 }
+
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active'); // Adiciona ou remove a classe "active"
+});
