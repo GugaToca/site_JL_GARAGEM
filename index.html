@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
     <style>
-        * {
+
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -26,6 +27,130 @@
             flex-direction: column;
             gap: 60px; /* Aumentando o espaçamento entre as seções */
         }
+
+        /* Estilos gerais do menu */
+header nav {
+    position: relative;
+}
+
+/* Menu fechado por padrão em dispositivos móveis */
+/* Estilos gerais do menu */
+header nav {
+    position: relative;
+}
+
+nav .menu {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    justify-content: center;
+}
+
+nav .menu li {
+    margin: 0;
+}
+
+nav .menu li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav .menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Menu responsivo (dispositivos menores) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+nav .menu {
+    flex-direction: row;
+}
+
+/* Para telas menores */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav .menu {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #02c1e2;
+        width: 200px;
+        display: none;
+    }
+
+    nav .menu.active {
+        display: flex;
+    }
+
+    nav .menu li a {
+        padding: 10px 20px;
+    }
+}
+d
+
+
+/* Menu responsivo (dispositivos menores) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+nav .menu {
+    flex-direction: row;
+}
+
+/* Para telas menores */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav .menu {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #02c1e2;
+        width: 200px;
+        display: none;
+    }
+
+    nav .menu.active {
+        display: flex;
+    }
+
+    nav .menu li a {
+        padding: 10px 20px;
+    }
+}
+
 
 
         /* Estilos gerais */
@@ -346,7 +471,7 @@ button:hover {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .service-item {
@@ -543,32 +668,122 @@ button:hover {
 #about h2 {
     font-size: 25px;
     margin-bottom: -10px;
-    color: #fafafa;
+    color: #ffffff;
 }
 
 .container {
-    color: #fdfdfd;
+    color: #f8f5f5;
     font-size: 18px;
+}
+/*começa aqui o codigo novo ------------------------------------------------------------------------------------------------*/
+
+/* Estilos para menu responsivo */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 36px;
+    color: rgb(224, 222, 222);
+    position: absolute;
+    top: -80px;
+    right: 310px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+nav .menu {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Para dispositivos menores */
+@media (max-width: 1024px) {
+    .menu-toggle {
+        display: block; /* Exibe o botão hambúrguer */
+    }
+
+    nav .menu {
+        flex-direction: column;
+        position: fixed; /* Usar fixed para garantir que o menu fique na frente de tudo */
+        top: 0; /* Posicionado no topo da tela */
+        left: 0; /* Posicionado no início da tela */
+        background-color: #02c1e2;
+        width: 5vw; /* Ocupa toda a largura da janela */
+        height: 40vh; /* Ocupa toda a altura da janela */
+        display: none; /* Esconde o menu por padrão */
+        z-index: 999; /* Garante que o menu esteja acima de outros elementos */
+        align-items: center; /* Centraliza verticalmente os itens */
+        justify-content: center; /* Centraliza horizontalmente os itens */
+    }
+
+    nav .menu.active {
+    display: flex; /* Garante que o menu seja exibido */
+    flex-direction: column;
+    position: absolute;
+    top: 10px; /* Ajuste para alinhar o menu abaixo do botão */
+    right: 20px;
+    background-color: #02c1e2;
+    width: 353px;
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
 }
 
 
+    nav .menu li {
+        padding: 3px 5px;
+    }
+
+    nav .menu li a {
+        color: white;
+        font-size: 24px; /* Aumentado para melhor legibilidade */
+        text-align: center;
+    }
+}
+
+/* Estilo específico para desktops */
+@media (min-width: 1025px) {
+    nav .menu {
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        width: auto;
+    }
+
+    nav .menu li {
+        padding: 0;
+    }
+}
+
+
+
+/*aqui termina o codigo novo---------------------------------------------------------------------------------------------------*/
         footer {
             background: #039eb9;
             color: white;
             padding: 20px;
             margin-top: 20px;
         }
+
     </style>
+
 </head>
 <body>
     <header>
-        <h1><img src="logo_garagemjl.png" alt=""></h1>
+        <h1><img src="logo_garagemjl.png" alt="Garagem JL"></h1>
         <nav>
-            <ul> 
-            
+            <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+            <ul class="menu">
+                <li><a href="#about">Sobre Nós</a></li>
+                <li><a href="#nossos-servicos">Serviços</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#cartão-fidelidade">Cartão Fidelidade</a></li>
+                <li><a href="#local">Nosso Local</a></li>
             </ul>
         </nav>
+        
     </header>
+    
     
     <section id="hero">
         <div class="slider-container">
@@ -644,6 +859,7 @@ button:hover {
                 </div>
 
                 <div class="box cartao-fidelidade">
+                    <div class="box" id="cartão-fidelidade"></div>
                     <h2>Nosso cartão fidelidade!</h2>
                     <p>Complete seu cartão e ganhe 30% de desconto na proxima lavagem ou ganhe uma remoção de chuva ácida do vidros!</p>
                     <img src="cartao_fidelidade.jpeg" alt="Cartão fidelidade" style="max-width: 300px; margin-top: 10px;">
@@ -704,26 +920,26 @@ button:hover {
                         </div>
 
 
-                       <div class="contato" id="contato">
-  <h2>Entre em contato:</h2>
-  <div class="redes-sociais">
-    <a href="https://www.instagram.com/garagem_jl" target="_blank" class="social instagram">
-      <img src="instagram.png" alt="Instagram">
-      Instagram
-    </a>
-    <a href="https://wa.me/5517992636776" target="_blank" class="social whatsapp">
-      <img src="whatsapp.png" alt="WhatsApp">
-      WhatsApp
-    </a>
-  </div>
-</div>
-     
+                        <div class="nosso-local" id="nosso-local">
+                            <h2>Entre em contato:</h2>
+                            <div class="redes-sociais">
+                              <a href="https://www.instagram.com/garagem_jl" target="_blank" class="social instagram">
+                                <img src="instagram.png" alt="Instagram">
+                                Instagram
+                              </a>
+                              <a href="https://wa.me/5517992636776" target="_blank" class="social whatsapp">
+                                <img src="whatsapp.png" alt="WhatsApp">
+                                WhatsApp
+                              </a>
+                            </div>
+                          </div>
+                                 
                         
         </section>
     </div>
     
     <footer>
-        <p>&copy; 2025 Garagem JL. Todos os direitos reservados.</p>
+        <p>&copy; 2025| Garagem JL. Todos os direitos reservados.</p>
         Desenvolvido por 
         <a href="https://www.instagram.com/studio.linhas" target="_blank" style="text-decoration: none; color: #b61307;">
     Studio Linhas
